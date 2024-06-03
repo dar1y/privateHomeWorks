@@ -12,25 +12,29 @@ public class Car {
         this.mileage = mileage;
     }
 
-    public void accelerate(){
+    public void accelerate() {
         System.out.println("car accelerating");
-    };
+    }
 
-    public void refuel(){
+    ;
+
+    public void refuel() {
 
         System.out.println("car has been refueled");
-    };
+    }
 
-    public void drive(int distance){
-        double consumed = distance/10;
+    ;
+
+    public void drive(int distance) {
+        double consumed = distance / 10;
         fuel = fuel - consumed;
-        System.out.println("the gas car passed: "+ distance + " km"+  " and consumed: " + consumed + " l of fuel");
+        System.out.println("the gas car passed: " + distance + " km" + " and consumed: " + consumed + " l of fuel");
         mileage = mileage + distance;
         System.out.println("the mileage now is: " + mileage);
         System.out.println("the tank level now is: " + getFuel() + " l of gas");
     }
 
-    public Car(String brand, double speed, double fuel,double mileage) {
+    public Car(String brand, double speed, double fuel, double mileage) {
         this.brand = brand;
         this.speed = speed;
         this.fuel = fuel;
