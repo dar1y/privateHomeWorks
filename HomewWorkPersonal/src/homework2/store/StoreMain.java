@@ -3,7 +3,7 @@ package homework2.store;
 import java.util.*;
 
 public class StoreMain {
-    static List<Product> products = Arrays.asList(new Product("nothing",0,0));
+    static List<Product> products = new ArrayList<>();
 
     static Scanner sc = new Scanner(System.in);
 
@@ -12,7 +12,7 @@ public class StoreMain {
 
         createNewProduct();
         getProductByName("cherry");
-        //deleteProductByName("cherry");
+        deleteProductByName("cherry");
     }
 
     public static void createNewProduct() {
@@ -23,9 +23,9 @@ public class StoreMain {
         System.out.println("Please enter the quantity of the product");
         int quantity = sc.nextInt();
         Product product = new Product(name, price, quantity);
-        if (products.stream().filter(p->p.getName().equals(name)).equals(name)) {
-            for (int i = 0; i < products.size() + i++; ) {
-                if (products.get(i).getName().equals(name)) {
+        if (!products.isEmpty()) {
+            for (int i = 0; i < products.size(); i++) {
+                if (products.get(i).getName().equalsIgnoreCase(name)) {
                     int combinedQuantity = product.getQuantity() + quantity;
                     product.setQuantity(combinedQuantity);
                     break;
@@ -47,11 +47,11 @@ public class StoreMain {
     }
 
     public static void deleteProductByName(String name) {
-        if (products.contains(product.getName().equals(name))) {
-            for (int i = 0; i < products.size() + i++; ) {
-                if (products.get(i).getName().equals(name)) {
+        if (!products.isEmpty()) {
+            for (int i = 0; i < products.size();i++) {
+                if (products.get(i).getName().equalsIgnoreCase(name)) {
+                    System.out.println("product " + products.get(i).getName() + " had been deleted successfully");
                     products.remove(i);
-                    System.out.println("product " + product.getName() + " had been deleted successfully");
                     break;
                 }
             }
