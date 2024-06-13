@@ -1,0 +1,3 @@
+Java is a high-level programming language. Java is widely used in various domains such as web development, mobile
+applications, and enterprise solutions. Learning Java opens up many opportunities for developers. Java's simplicity
+ and readability make it popular choice for beginners and experienced programmers alike.
