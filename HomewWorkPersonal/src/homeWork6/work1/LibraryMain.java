@@ -16,10 +16,10 @@ public class LibraryMain {
         catalogOfBooks.add(book2);
         catalogOfBooks.add(book3);
         catalogOfBooks.add(book4);
-        System.out.println(controlCentre.getAllBooks());
+        controlCentre.getAllBooks();
        //controlCentre.getBookById(5);
        controlCentre.deleteBookById(5);
-        System.out.println(controlCentre.getAllBooks());
+       controlCentre.getAllBooks();
 
     }
 }

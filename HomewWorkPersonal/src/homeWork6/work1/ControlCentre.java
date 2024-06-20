@@ -4,11 +4,11 @@ import java.util.List;
 
 public interface ControlCentre {
     void getBookById(int id);
-    List<Book> getAllBooks();
-    List<Book> getBookByAuthor(String author);
-    List<Book> getBookByPrice(int price);
-    List<Book> getBookByName(String name);
-    Book createNewBook(Book book);
+    void getAllBooks();
+    void getBookByAuthor(String author);
+    void getBookByPrice(int price);
+    void getBookByName(String name);
+    void createNewBook(Book book);
     void deleteBookById(int id);
     }
 

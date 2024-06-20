@@ -24,13 +24,15 @@ public class ControlCentreImpl implements ControlCentre{
     }
 
     @Override
-    public List<Book> getAllBooks() {
-        return catalogOfBooks;
+    public void getAllBooks() {
+        for(Book b: catalogOfBooks){
+            System.out.println(b);
+        }
         }
 
 
     @Override
-    public List<Book> getBookByAuthor(String author) {
+    public void getBookByAuthor(String author) {
         {
             List<Book> listByAuthor = new ArrayList<>();
 
@@ -42,14 +44,15 @@ public class ControlCentreImpl implements ControlCentre{
             if (listByAuthor.isEmpty()) {
                 System.out.println("no books of this author :" + author);
             } else {
-                return listByAuthor;
+                for(Book b: listByAuthor){
+                    System.out.println(b);
+                }
             }
-            return listByAuthor;
         }
     }
 
     @Override
-    public List<Book> getBookByPrice(int price) {
+    public void getBookByPrice(int price) {
         {
             List<Book> listByPrice = new ArrayList<>();
 
@@ -61,20 +64,41 @@ public class ControlCentreImpl implements ControlCentre{
             if (listByPrice.isEmpty()) {
                 System.out.println("no books of this price :" + price);
             } else {
-                return listByPrice;
+                for(Book b: listByPrice){
+                    System.out.println(b);
+                }
             }
-            return listByPrice;
         }
     }
 
     @Override
-    public List<Book> getBookByName(String name) {
-        return null;
+    public void getBookByName(String name) {
+        {
+            List<Book> listByName = new ArrayList<>();
+
+            for (Book b : catalogOfBooks) {
+                if (b.getName() == name) {
+                    listByName.add(b);
+                }
+            }
+            if (listByName.isEmpty()) {
+                System.out.println("no books of this price :" + name);
+            } else {
+                for(Book b: listByName){
+                    System.out.println(b);
+                }
+            }
+        }
     }
 
     @Override
-    public Book createNewBook(Book book) {
-        return null;
+    public void createNewBook(Book book) {
+        Book createdBook = new Book();
+        createdBook.setId(book.getId());
+        createdBook.setName(book.getName());
+        createdBook.setAuthor(book.getAuthor());
+        createdBook.setPrice(book.getPrice());
+        catalogOfBooks.add(createdBook);
     }
 
     @Override
